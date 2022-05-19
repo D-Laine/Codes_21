@@ -1,0 +1,13 @@
+#include <linkbot.h>
+CLinkbotI robot1, robot2;
+CLinkbotIGroup group;
+
+group.addRobot(robot1);
+group.addRobot(robot2);
+
+robot1.driveDistanceNB(20, 2);
+robot2.driveDistance(-20, 2);
+robot1.moveNB(-720, NaN, -720);
+robot2.move(-720, NaN, -720);
+robot1.driveDistanceNB(45, 2);
+robot2.driveDistance(-45, 2);
