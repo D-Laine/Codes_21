@@ -1,0 +1,453 @@
+//declaring variables used in code
+int rnum1, rnum2, rnum3, winn_lose, chance1, intro_choice1, middle_choice2;
+string_t name1, name2, rmap_choose, name_es, final_choice3, branchA, branchB;
+
+//main random numbers
+rnum1 = randint(0, 1000);
+rnum2 = randint(1, 5);
+
+//funcions
+//1st branching choice
+void choice1(){
+    printf("And so, the stage is set.\n");
+    printf("You must make your choice.\n");
+    printf("You can choose to prepare to fight(1), or for a dance(2), or you can attempt an escape(3).\n");
+    printf("So please choose wisely.\n");
+    scanf("%i", &intro_choice1);
+    while(intro_choice1 != 1 && intro_choice1 != 2 && intro_choice1 != 3){
+        printf("Please choose an actual choice.\n");
+        scanf("%i", &intro_choice1);
+    }
+    printf("And so, the choice is made.\n");
+}
+
+//second branching choice
+void choice2(){
+    printf("So things have developed even further.\n");
+    switch(intro_choice1){
+        case 1 :
+            printf("Opponents have appeared to face you, with varied skills\n");
+            printf("You must choose who to fight, and see how you fare.\n");
+            printf("Choose beteewn the martial artist(1), the tribal warrior(2), and the viking warrior.\n");
+            printf("Please choose wisely, for your life may depend on it.\n");
+            scanf("%i", &middle_choice2);
+            while(middle_choice2 != 1 && middle_choice2 != 2 && middle_choice2 != 3){
+                printf("Please choose an actual choice.\n");
+                scanf("%i", &middle_choice2);
+            }
+            break;
+        case 2 :
+            printf("Skilled dancers have appeared before you, with differing styles.\n");
+            printf("You must choose whose hand you shall take, and see how you fare.\n");
+            printf("Choose beteewn the matador(1), the veiled person(2), and the gangster(3).\n");
+            printf("Please choose wisely, for your performace must be the best.\n");
+            scanf("%i", &middle_choice2);
+            while(middle_choice2 != 1 && middle_choice2 != 2 && middle_choice2 != 3){
+                printf("Please choose an actual choice.\n");
+                scanf("%i", &middle_choice2);
+            }
+            break;
+        case 3 :
+            printf("You made the decision to escape, and run away from the performance.\n");
+            printf("Now, you are faced with a choice on where to go.\n");
+            printf("Left(1), Center(2), Right(3), all are valid options, however\n");
+            printf("Which way shall you go, and be careful.\n");
+            printf("For the choice you make\n");
+            printf("May be your last.\n");
+            scanf("%i", &middle_choice2);
+            while(middle_choice2 != 1 && middle_choice2 != 2 && middle_choice2 != 3){
+                printf("Please choose an actual choice.\n");
+                scanf("%i", &middle_choice2);
+            }
+            break;
+    }
+    printf("And so, the ending is written.\n");
+}
+
+//roadmap funcion
+void roadmap(){
+    printf("This is the roadmap of the program\n");
+    printf("The program starts with a choice to view the roadmap\n");
+    printf("It then asks for you to give two names for characters in the story.\n");
+    printf("It then starts the introduction, and you are given the choice between preparing to fight, to dance or to run.\n");
+    printf("Once the user makes their choice, it offers some more story before offering some more options.\n");
+    sleep 10;
+    printf("If you choose to fight, you can fight a martial artist, a bow-wielding tribal warrior, and a viking.\n");
+    printf("For dance, you can choose to dance with a matador, a veiled person, or a gangster.\n");
+    printf("For escape, you can go either go on a left, center, or right path.\n");
+    sleep 15;
+    printf("If you choose the martial artist, you get a fight and then you get a reveal that they are a person you know, \nand you leave the theatre together.\n");
+    printf("For the tribal warrior, you both fire a single arrow at each other, and then you realize their identity, \nand you both check on each other and decide to leave.\n");
+    printf("For the viking, you both fight, and once you realize each others identity, they carry you out of the theatre.\n");
+    sleep 15;
+    printf("If you choose the matador, you both dance together and once you finish you decide to leave the theater together.\n");
+    printf("For the veiled dancer, you both dance in a paired dance until you reconize each other and leave togther.\n");
+    printf("For the gangster, as you dance with them, you connect them to someone you know, and eventually the dance ends and you both leave.\n");
+    sleep 15;
+    printf("For the left path, if you go down it, you find a shocking reveal about the voice you meet when you first wake up.\n");
+    printf("For the center path, you eventally end up outside and decide to find yourself and your friend.\n");
+    printf("For the right path, you eventually arrive at a large door with a ton of security, and decide to enter it, \nand eventually leave with your friend.\n");
+    printf("All of the options are numbered, so they just have to answer 1-3 to choose their path.\n");
+    printf("And that is the code! Thanks for reading the roadmap!\n");
+}
+
+//Naming function
+void name_selector(){
+    printf("Please give me a name\n");
+    scanf("%s", &name1);
+
+    printf("Please give me another name\n");
+    scanf("%s", &name2);
+}
+
+//Ending branch choice
+void final_selector(){
+    if(intro_choice1 == 1){
+        switch(middle_choice2){
+            case 1 :
+                final_choice3 = "1A";
+                break;
+            case 2 :
+                final_choice3 = "1B";
+                break;
+            case 3 :
+                final_choice3 = "1C";
+                break;
+        }
+    }
+    else if(intro_choice1 == 2){
+        switch(middle_choice2){
+            case 1 :
+                final_choice3 = "2A";
+                break;
+            case 2 :
+                final_choice3 = "2B";
+                break;
+            case 3 :
+                final_choice3 = "2C";
+                break;
+        }
+    }
+    else if(intro_choice1 == 3){
+        switch(middle_choice2){
+            case 1 :
+                final_choice3 = "3A";
+                break;
+            case 2 :
+                final_choice3 = "3B";
+                break;
+            case 3 :
+                final_choice3 = "3C";
+                break;
+        }
+    }
+}
+
+//Chance of winning/losing function
+void fight_WL(){
+    winn_lose = randint(0,1);
+    if(winn_lose == 0){
+        branchA = "loss";
+    }
+    else if(winn_lose == 1){
+        branchA = "win";
+    }
+}
+
+//trap chance function
+void trapchance(){
+    chance1 = randint(1,10);
+    if(chance1 <= 5){
+        branchB = "activate";
+    }
+    else if(chance1 > 5){
+        branchB = "deactiveate";
+    }
+}
+
+//Main code
+//Viewing roadmap choice
+printf("Would you like to see the roadmap?\n");
+scanf("%s", &rmap_choose);
+while(rmap_choose != "no" && rmap_choose != "No" && rmap_choose != "yes" && rmap_choose != "Yes"){
+    printf("Please make a choice");
+    scanf("%s", &rmap_choose);
+}
+if(rmap_choose == "yes" || rmap_choose == "Yes"){
+    printf("Ok! Presenting the roadmap!\n");
+    roadmap();
+}
+else if(rmap_choose == "no" || rmap_choose == "No"){
+    printf("Ok! moving on!\n");
+}
+
+//Selecting names
+name_selector();
+
+printf("Nice names.\n");
+
+printf("Are you sure about the names ", name1, " and ", name2, "?\n");
+scanf("%s", &name_es);
+while(name_es != "no" && name_es != "No" && name_es != "yes" && name_es != "Yes"){
+    printf("Please enter yes or no.\n");
+    scanf("%s", &name_es);
+}
+
+if(name_es == "yes" || name_es == "Yes"){
+    printf("Ok! Moving along!\n");
+}
+else if(name_es == "no" || name_es == "No"){
+    printf("Ok! I will let you change your names!");
+    name_selector();
+}
+
+//printf(name1, " ", name2, "\n");
+
+//Introduction
+printf("You open your eyes.\nYou are on a stage, with red velvet curtains open and a spotlight on yourself.\n");
+printf("A mysterious voice echos in your head, \"So, you have finally awoken.\nI have a request for you. Please, entertain me. If you are not motivated enough, I have a person dear to you,\n", name1, ", who may suffer if you do not do as I ask. So, let us see what you are made of.\"\n");
+sleep 15;
+printf("\"What was that? You forgot your name?\" the voice asks questioningly. \"Oh yeah, I knocked you out.\nThe rest of your memory should come back soon enough, but your name is ", name2, ".\"\n");
+choice1();
+
+//Middle 
+if(intro_choice1 == 1){
+//Option 1
+    printf("When you make your choice, you decide to throw ", rnum2, " punches.\n");
+    printf("When the audience of ", rnum1, " realises what you plan to do, they all clap.\n");
+    printf("As you prepared to fight, the voice comments,\n\"Whoa ", name2, ", not so fast. Since you have choosen to fight, I shall give you a choice of opponents.\"\nAs that is said, three figures appear out of thin air, forming fully all at once.\n");
+    sleep 15;
+    printf("The three people are very different in their own ways.\nOne wears a gi and appears to be of eastern descent. They hold no weapon.\n");
+    printf("Another is dressed in a beautiful and colorful set of tribal armor, with a ornate longbow.\n");
+    printf("The third is a large person with a huge axe, dressed in furs and skulls, of Scandavain descent.\n");
+    sleep 15;
+    printf("One of these three will be your opponent. One may be ", name1, " who is under an illusion.\"\n");
+    choice2();
+}
+else if(intro_choice1 == 2){
+//Option 2
+    printf("When you make your choice, you decide to do ", rnum2, " pirouettes.\n");
+    printf("When the audience of ", rnum1, " realises what you plan to do, they all clap.\n");
+    printf("\"So, you have decided to dance for me.\" the voice comments excitely.\n\"It is very hard to dance alone, so I shall give you some partners to choose from, ", name2, ".\"\n");
+    sleep 10;
+    printf("As that is said, three figures appear out of thin air, each very unique and from different eras.\n");
+    printf("One is dressed in a very fine matador outfit, with a large sombero and a painted skull mask.\n");
+    printf("Another is a dandy dressed in a fine silk outfit and veil, with an umbrella.\n");
+    printf("The third is dressed in a Italian suit and fedora, with the outfit being crisp and clean.\n");
+    sleep 10;
+    printf("The voice says, \"These are the people who you can pair with for the dance. \nOne may be your dear friend ", name1, " trying to impress you.\"");
+    choice2();
+}
+else if(intro_choice1 == 3){
+//Option 3
+    printf("As you prepare to escape, you decide to do ", rnum2, " of flips before disspearing into smoke.(Impressive)\n");
+    printf("As the audience sees you dissapear in smoke, all ", rnum1, "of them gasp in suprise.\n");
+    printf("Fleeing through the smoke into the backstage, you enter the only hallway availiable.\n The voice returns and states in what appears to be suprise, \"I'm impressed that this tunnel is still avaliable. \nAnyway, the trick you pulled was very impressive, Anyway ", name2, " this place is very different ...\"\n");
+    sleep 15;
+    printf("The voice begins blabbering on and on in your head, while you observe your surroundings. \nYou are in dimly lit and dingy tunnels with little light, and smellign of mold and filth.\n");
+    printf("As you go through the twists and turns, just talking with the voice, you come across a intersection.\n");
+    printf("The voice comments, \"You have a choice to make. To go left, right, or ever onward. One path may even lead to finding ", name1, ". I am sure that whatever choice you make, however,\n will be entertaining.");
+    sleep 15;
+    choice2();
+}
+else{
+    printf("What sin did you commit?");
+}
+
+//Endings
+//Setup
+final_selector();
+
+//printf(final_choice3, "\n");
+
+if(final_choice3 == "1A" || final_choice3 == "1B" || final_choice3 == "1C"){
+    fight_WL();
+    printf(branchA, "\n");
+    //printf("For Testing: Set branchA");
+    //scanf("%s", &branchA);
+}
+
+if(final_choice3 == "3A" || final_choice3 == "3B" || final_choice3 == "3C"){
+    trapchance();
+    printf(branchB);
+    //printf("For Testing: Set branchB\n");
+    //scanf("%s", &branchB);
+}
+
+//Ending - Path 1, choice 1 (Fight, Martial Artist)
+if(final_choice3 == "1A"){
+    printf("As you decide to face the martial artist, the voice comments, \"", name2, name2, "they're our boss!\n They'll beat the fighter's tosh.(I'm sorry for writing this.)\n");
+    printf("As you move to the center of the stage, the martial artist says, \" it is truly an honor to fight you.\nI hope you do not go easy on me.\"\n");
+    printf("When you both get into a stance, you hear a mysterious countdown in your head go 3... 2... 1...\n");
+    sleep 10;
+    sleep 5;
+    printf("GO!\n");
+    printf("You and the martial artist charge at one another, both fighting in different ways.\n");
+    printf("The artist delivers heavy and fast strikes, over and over, rushing at you in a flurry of constant blows.\n");
+    printf("You fight in a flowy sense of way, with movements that deflect away the attacks,\n and delivering open-palmed blows to their pressure points.\n");
+    sleep 15;
+    switch(branchA){
+        case "loss" :
+            printf("As the battle continues, you get pushed back more and more by the relentless assult of the martial artist.\n");
+            printf("Eventually, they are able to get the upper hand on you, and lands a kick directly to chin. \nAs you fall into unconsciousness, you hear your name shouted by your oppenent.\n");
+            printf("When you wake up, you hear the martial artist say \"", name2, " it's me, ", name1, " please wake up, I'm sorry.\" As you get up, you are hugged by your opponent, who you now know is ", name1, ".\n");
+            sleep 20;
+            printf("The audience awws at the cute scene, and begins to file out.\n");
+            printf("You hug them back and whipser sweet nothings to each other, the voice comments, \n\"SO CUTE. Since you have found each other (and entertained me) \nI shall let you leave. Exit is directly ahead though the seats.\"\n");
+            printf("And so, you and ", name1, " leave, and begin to spend even more time together, your bond stregthened by the events of the theater.\n");
+            sleep 20;
+            break;
+        case "win" :
+            printf("As you continue to fight, your opponent gets more and more frustrated with the fact that they cannot land a hit on you. \n As they grow angrier, they miss, and give you an opening to strike them in the chest. \nAs you land the final hit, they fall and go limp.\n");
+            printf("As they fall, you see their face cleary for the first time, and speak their name.\n");
+            sleep 20;
+            printf("\"", name1, "!\"\n");
+            printf("You position ", name1, "comfortably on the floor on their back as the voice reassures you, \n\"They'll live. I made sure of that. Once they wake up, you can leave. The entrance is just through the seats.");
+            printf("As you wait for them to wake up, the audience files out. \nOnce they wake up, you both have a heartfelt reuinion. \nYou both then leave to be together for the rest of your lives.");
+            sleep 20;
+            break;
+    }
+}
+//Ending - Path 1, choice 2 (Fight, Tribal Warrior)
+else if(final_choice3 == "1B"){
+    printf("As you and the tribal warrior move to face each other, the other opponents dissapear, \nand a bow and quiver appear for both you and your oppoents.\n");
+    printf("As you and your opponent move to grab the arrows, they say, \n\"It is truly an honor to face you. I hope that this battle is a fruitful endeavor.\" \nAs you finally get into position and draw your bow with one arrow a countdown begins.\n");
+    printf("3... 2... 1...");
+    sleep 5;
+    printf("GO!\n");
+    printf("And you both let your arrows fly\n");
+    sleep 15
+    switch(branchA){
+        case "loss" :
+            printf("As the arrows fly, yours just barely misses its mark, landing in the ground behind your opponent. \nTheirs lands the mark, and hits you directly in knee.(Seems you're now a guard in Whiterun) \nAs you fall to the ground, because your knee has an arrow in it, your opponent approches you and says \n\"It's over.\" As they say that, they fall, and their headress falls off, revealing ", name1, "?\n");
+            printf("As they gets up from falling over, they look at you and look of recignition falls on their face as they whisper, \n\"", name2, "\"?\n");
+            sleep 20;
+            printf("Once they reconize you, they run over and take a look at your knee before seeing it is fully healed. \n\"I healed the leg for you.\" The voice says. \"If you want to leave, the exit is center on, through the seats.\" \nIt appears as though the audience has already left. As you look upon the exit, ", name1, " picks you up and says \n\"Well then, lets get out of this dump.\" \nAnd you two never left each others side since.\n");
+            sleep 15;
+            break;
+        case "win" :
+            printf("As you both let go of the arrows, you are able to dodge the arrow. However, your opponent is not able to, and gets their headress knocked off by yours. \nThe person who was wearing that headress is... ", name1, "?!\n");
+            sleep 10;
+            printf("As they fall backwards and hit their head on the floor, you run over to thema and check on them. \nOther than being slightly dazed, they seem to be okay. \n\"It's nice to see you so soon.\" They say barely above a whisper, \"I'm so happy you're okay ", name2, "\n");
+            sleep 10;
+            printf("Once he is done talking, the voice comments, \"Since that is done, I have taken the liberty of creating a path to the exit. \nYou two have fun! Byesies <3!(Why am I like this) \nYou and ", name1, " both decide to leave and spend even more time together, which you see as the best choice you have ever made in your life.\n");
+        sleep 10;
+            break;
+    }
+}
+//Ending - Path 1, choice 3 (Fight, Viking Warrior)
+else if(final_choice3 == "1C"){
+    printf("As you choose your opponent, they let out a hearty, booming laugh. \"So you decided to fight a real moster this time! Good! \nI'll enjoy destroying you!\"\n");
+    printf("The viking and you get into postion on the stage. A war axe appears in your hand once you get into positon. \nThe voice comments, \"If you lose your head, I will get you the nicest casket I can find.\"\n");
+    sleep 15;
+    printf("After that comment, a countdown starts. \"3...2...1...\n");
+    sleep 5;
+    printf("GO!\n");
+    switch(branchA){
+        case "loss" :
+            sleep 5;
+            printf("As your opponent rushes at you while screaming a battle cry, you prepare to block. \nAs the fight continues, this loop also repeats.\n");
+            printf("Eventually you are unable to block, and the axe comes down on your skull. \nBut, a few seconds before it hits you, it stops, and you faint from the shock.(And probally pee yourself too)\n");
+            sleep 15;
+            printf("as you wake and get up, in your face is your opponent, saying \"", name2, "? You okay? \nYes? No? Oh, you seem okay! But, I realized who I am! \nIt's me! ", name2, "! \nSo lets get out of here!\" \nThey pick you up bridal style and start carrying you down the isle through the currenly leaving audience.\n");
+            printf("As the voice giggles at your currently blushing face, you realize that this positon is not as bad as it seems, and might even want to stay there a while.\n");
+            sleep 15;
+            break;
+        case "win" :
+            printf("Both you and your opponent rush at each other, and you begin a very epic duel where the first person to stop, loses. \nAs this happens the audience is shouting an whooping with joy at the scene in front of them.\n");
+            sleep 15;
+            printf("As you get knocked back, your hear the shouts, \"", name2, "! ", name2, "! ", name2, "!\" As you hear these shouts, you decide to make your final rush.\n");
+            printf("As you dodge and weave though the attacks launched by your opponent, you eventually are close enough to hit them. \nAs you quickly raise your axe, you  bring it down on them with a loud CLANG!(owie!)\n");
+            sleep 15;
+            printf("As that happens, their viking hat falls off and they fall over with an \"Owie... ", name2, "... Why...\" \nYou reconize that voice! It's ", name1, " As you run over to them, and check on them, they rise up quickly and pick you up too! \n\"Don't worry, I have a really thick skull. I'll be okay.\"\n");
+            printf("As they are carrying you, looking for a way out, the voice fangirls, \"KYAAA! \nYou too are so cute! Oh, and the exit is directly forward through the stage UwU!\" \nOnce you learn this, you relay this to ", name1, " and they say, \n\"Well, I guess I better carry you out of here, as you seem rather comfortable.\" \nDespite how embarrassing this is, you agree. It is actually rather comfortable in their arms.\n");
+            sleep 25;
+            break;
+    }
+}
+//Ending - Path 2, choice 1 (Dance, Matador)
+else if(final_choice3 == "2A"){
+   printf("As you decide you wish to dance with the Matador, they approach you and say, \n\"I would love to have a dance with you.\" They pull out a rose. \n\"Even if this rose does not compare to you, I would like you to have it nevertheless\"\n");
+    sleep 15;
+    printf("As both of you get into a pose, music picks up, and you begin to perform a salsa with them across the stage,\n the other partners disspearing the moment you got into the pose. \nThe matador whispers, \"I would love to know the name of my lovely partner. So what is yours?\" \nYou respond, ", name2, " \nAs you comment this, they say, \"", name2, " ", name2, ". Quite the perfect name for the perfrect dancer.\n");
+    sleep 20;
+    printf("Once he dips you, the whole audience appluads for you both, and the voice says, \"That was amazing!!! \nSince you entertained me, I will allow you to be with ", name1, " now, so Illusion, break!\" \nAs the voice says that, the matador blinks, and whispers, \"", name2, "?\" \nAs they say this, you whisper, \"", name1, "?\" \nYou both hug each other with all your gusto, and decide to never be separated again.\n");
+    sleep 15;
+}
+//Ending - Path 2, choice 2 (Dance, Veiled Person)
+else if(final_choice3 == "2B"){
+   printf("As you walk up to your choosen partner, they say, \"It will be very entertaining to dance with you, at least.\" \nYou both face each other as the other partners fade away. \nOnce they disspear, the tune of a paired dance picks up, and the two of you begin to dance to it.\n");
+    sleep 15;
+    printf("As you two continue to perform synced up moves, they say, \n\"You're not half bad at this. I would enjoy dancing with you for a few more songs.\" \nThe audience is cheering for the both of you as the song changes to a slower one, and you continue dancing with them.\n");
+    sleep 20;
+    printf("While the last note of the song fades away, you and your partner goes into a paired pose. \nOnce the audience finishes clapping, they say, \"", name2, " I always enjoyed dancing with you.\" \nWHAT!!!! OvO!!! \nThey know your name!!! Of course this was all said by the voice, who was shocked they remembered this quickly. \nYou, however, were gripping the person whose voice you now reconized, ", name1, " who you were so happy to see again. \nAs you continue to grip them, ", name1, " wheezes out, \"I know, I missed you too, but your squeezing the life out of me.\" \nBoth you and ", name1, " leave with the voice's (admittily little) help, and still dance every night to this day.\n");
+    sleep 25;
+}
+//Ending - Path 2, choice 3 (Dance, Gangster)
+else if(final_choice3 == "2C"){
+   printf("Once you point at your choosen partner, they comment, \"It's been a while since I danced with anyone as pretty as you.\" \nYou flush up slightly at this comment, as you can tell that he is a very enchanting person. \nOnce you both get into positon, a slow dancing song plays. Your other options dissapear as you both begin to dance.\n");
+    sleep 20;
+    printf("As you two tango, he begins to talk in his deep voice, saying, \"So darling, what is your name?\" \nYou respond with your name, and he comments, \"", name2, ", huh, a nice name, however, I think that darling fits you more.\" \nThis very blatant flirting reminds you of your friend, \n", name1, " who would do much the same to you whenever you were together... Wait a minute!\n");
+    sleep 20;
+    printf("You continue dancing with the sexy UwU man.(this is very cursed) \nYou continue to blush deeper and deeper as he continues to casually flirt with you. \nOnce you both finish, he asks you, \"Do you think you know who I am honey? If so speak up.\" \nYou answer that you think he is ", name1, ". \nThey pick you up bridal style, which comfirms it. \nAs they carries you out of the theater, you snuggle into them and they say, \n\"You were alsays so cute, I don't want to share you with anyone else. \nBe mine?\"\n");
+    sleep 20;
+}
+//Ending - Path 3, choice 1 (Escape, Left)
+else if(final_choice3 == "3A"){
+    printf("Once you have decided on where to go, you turn to the left and begin to walk down the hall. \nWhile walking you hear a quiet murmurs of one person that gets louders and louder the further you go down the hall.\n");
+    sleep 15;
+    switch(branchB){
+        case "activate" :
+            printf("Suddenly, a large piece of foam labeled Lotta Baloney landed on you. However, it did not cause any harm.\n");
+            break;
+        case "deactiveate" :
+            printf("Suddenly, with a screech of metal, a large piece of foam labeled Lotta Baloney landed next to you.\n It did not do anything, nor did it even block your path.\n");
+            break;
+    }
+    printf("Moving away from that reference, the murmurs seem to mention some very suspicous, they mention your name, and eventually, you come across a door. \nYou reach to open the handle and the murmurs go quiet. \n\"Whatever you do, don't open that door.\" the voice says in a very, very serious tone.\n");
+    sleep 25;
+    printf("At the same time, the same words echo from the door, and you resolve to open it. \nAs the voice begins to shout, beg, and scream at you to not open the door, you enter to find...\n");
+    printf(name1, "! They turn around and say, \"So. ", name2, " you found me in my secret hideout. \nYou may be wondering why I did this? It was as I said in the beginning. \nI wanted entertainment. \nBut not for myself. For you. \nAfter a certain event happened in your life, you lost everything, even your memory. \nI wanted to help you recover it, so I set up the one thing you wanted in life. \nA mysterious stage where you could act out whatever you wanted. \nBut, ", name2, "You were always so good at discovering my secrets. \nI could never hide my secrets from you.\n");
+    sleep 25;
+    printf("If you wish to leave, the exit is just to your left. \nJust so you know, ", name2, " I have always cared about you...\n");
+}
+//Ending - Path 3, choice 2 (Escape, Center)
+else if(final_choice3 == "3B"){
+    printf("Your descion to head foward is made with the voices excitement. \"Ooooo... \nI have actually never gone that way before. Don't judge me for that! \nThere are a lot of paths down here, and it took a lot of time to design a mysterious theater...\" \nThey continue to rattle off as you walk down the path.\n");
+    sleep 15;
+    switch(branchB){
+        case "activate" :
+            printf("A bunch of darts shot out of the wall next to you, almost hitting you and causing you to fear for your life.\n");
+            break;
+        case "deactiveate" :
+            printf("Suddenly, the sound of air being blown out of holes in the walls echoed, and you realized some dart traps had yet to be reloaded.\n");
+            break;
+    }
+    printf("Once you experience an India Jones moment, you continue along the path. \nIt appears to be going higher than before, and eventually you reach a door with light coming out from under it. \nIn a sorrowful tone, the voice comments, \n\"So, you've found the exit to this place. I really enjoyed talking to you. I will release your friend somewere safe.\n");
+    sleep 25;
+    printf("So, get going and go find yourself!\" Once you open the door, the light floods in. \nThe outside is beautiful. Greens, blues, and browns as far as the eye can see. \nOnce you see this and take it all in, you resolve yourself. \nYou are ", name2, ". \nYou will find your friend ", name1, ". \nAnd... You will discover who you were in this world.\n");
+    sleep 20;
+}
+//Ending - Path 3, choice 3 (Escape, Right)
+else if(final_choice3 == "3C"){
+    printf("As you walk to the right path, the voice seems excited for some reason. \n\"Ooooo, this path is one of the ones that I worked on the most. \nI hope you like it.\"\n");
+    switch(branchB){
+        case "activate" :
+            printf("As you step on a pressure plate, a trapdoor opens up with lots of spikes, and you almost fall in. \nOnce you step off the pressure plate, the hole closes.\n");
+            break;
+        case "deactiveate" :
+            printf("As you step on a pressure plate, a trapdoor opens up with lots of pillows, and you almost fall in. \nOnce you step off the pressure plate, the hole closes.\n");
+            break;
+    }
+    sleep 25;
+    printf("Moving past the most dangerous trap, you arrive at a locked door that is about 50 feet tall, \nand has such a large amout of security it looks like it holds back change in America. \nThere is a keypad that seems to require a four digit code to open the door.\n");
+    printf("You enter the most secure code of all the codes, 1-1-1-1. \nThis still opens the door and reveals... A pillow room!!! \nIt is actually a room in an insane asylum, however those are pillow rooms. \nYou hear a shout of ", name2, "! as you are tackled by a person famillar to you. It is your friend, ", name1, "! \nThey were in the highly secure pillow room the whole time.\n");
+    sleep 20;
+    printf("The voice grumbles, \"That was supposed to be more dramatic, with a rescue maybe, \nhowever this scene is cute, so I will let you leave. \nThe exit is on your right, have fun. As you both talk as you walk to door, \nyou both decide that spending more time with each other would be fun.\n");
+    sleep 10;
+}
+
+printf("//Hello, Daniel here. I just wanted to say:\n");
+sleep 5;
+printf("//Thank you so much for reading my story!\n");
+printf("//PS. Please don't judge me ;-;\n");
