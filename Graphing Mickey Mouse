@@ -1,0 +1,17 @@
+#include <chplot.h>
+CPlot plot;
+
+plot.title("");
+plot.label(PLOT_AXIS_X, "x");
+plot.label(PLOT_AXIS_Y, "y");
+plot.sizeRatio(1);
+
+plot.fillOpacity(1);
+plot.fillColor("red");
+plot.circle(0, 0, 1);
+plot.fillColor("green");
+plot.circle(1, 1, .75);
+plot.fillColor("blue");
+plot.circle(-1, 1, .75);
+
+plot.plotting();
