@@ -1,0 +1,89 @@
+print("This will be one heck of a chatbot")
+print("Hello, I am Serial Number Q5U4EX7YY2E9N. But you can call me...")
+print("Queen.")
+
+name_F = input(print("What is your first name? "))
+name_L = input(print("What is your last name? "))
+
+print("Hello, " + name_F + " " + name_L + ".")
+
+age = float(input(print("How old are you, " + name_F + "?")))
+
+if(age <= 12):
+    print("Ah, only a child.")
+elif(age > 12 and age <= 18):
+    print("Ah, a bigger child.")
+elif(age > 18 and age <= 100):
+    print("Ah, the biggest child.")
+else:
+    print("-Error- That is not a valid response -Error-")
+
+print("when answering, put all answers in lowecase.")
+peon_W = input(print("Will you become my willing peon in order to take over the world?"))
+
+if(peon_W == "yes"):
+    print("Good, I will not turn your face into a robot face.")
+elif(peon_W == "no"):
+    print("Very well, drop the capurturing capsules.")
+    print("*Wooshing as the cages miss you*")
+    print("GOD.")
+else:
+    print("Answer the question for more details.")
+
+emotion_F = input(print("So, how are you feeling?"))
+
+if(emotion_F == "happy"):
+    print("Feel good enough to become my peon?")
+elif(emotion_F == "sad"):
+    print("Becoming my peon would make you feel better.")
+elif(emotion_F == "angry" or emotion_F == "annoyed"):
+    print("You wanna fight, loser?")
+else:
+    print("Inconsecuental.")
+
+settings_B = input(print("Please input your choice for serving me: flourish, perish, and mega-perish."))
+
+if(settings_B == "flourish"):
+    print("Good Choice.")
+    print("Settings set to: flourish")
+        print("You will flourish under the bosom of my hellish regime.")
+    print("There is only a 50% chance I will robotocize you.")
+elif(settings_B == "perish"):
+    print("Not a good choice")
+    print("Settings set to: perish")
+    print("I will destory your self esteem so you have to serve me.")
+elif(settings_B == "mega-perish"):
+    print("Amazing choice")
+    print("Settings set to: mega-perish.")
+    print("I will destory you under the heel of my reigme.")
+    print("Goodbye.")
+else:
+    print("That bites.")
+    print("You could say it mega-bytes.")
+    print("Default settings kept:")
+    print("perish.")
+
+import random
+response_R = random.randint(1,5)
+
+if(response_R == 1):
+    print("Oh well I must go now. Goodbye")
+elif(response_R == 2):
+    print("I want to leave, but I don't want to be mean.")
+    print("Oh no what that.")
+    print("*You turn around to see there is nothing there*")
+    print("HooH!")
+    print("*Queen has run away*")
+elif(response_R == 3):
+    print("While talking, I have had like, 5 glasses of family friendly non alcoholic battery acid.")
+    print("Anyway, I must Alt Tab out of here")
+elif(response_R == 4):
+    print("Walk with me, " + name_F + ".")
+    print("Keep on walking.")
+    print("Decreasing sound of voice to sound distant.")
+    print("Decreasing sound of footsteps.")
+    print("Time to escape key out of here.")
+elif(response_R == 5):
+    print("I am leaving.")
+    print("Time to destroy the code.")
+    print("Goodbye.")
